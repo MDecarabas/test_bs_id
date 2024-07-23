@@ -1,7 +1,7 @@
 [project]
-name = "eric_bs_instrument"
+name = "sim_bs_instrument"
 version = "0.0.1"
-description='Eric Beamline Bluesky Instrument Control'
+description='Simulated Beamline Bluesky Instrument Control'
 authors = [
     {name = "Eric Codrea", email = "ecodrea@anl.gov"},
 ]
