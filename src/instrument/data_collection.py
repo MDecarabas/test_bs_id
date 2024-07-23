@@ -12,7 +12,6 @@ from .plans import *  # noqa
 import hdf5plugin  # noqa
 
 ## ipython helpers
-from .utils.mpl_helper import *  # noqa
 from .utils.session_logs import logger
 
 logger.info(__file__)
