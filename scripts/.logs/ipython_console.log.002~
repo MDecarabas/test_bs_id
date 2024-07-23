@@ -1,0 +1,7 @@
+# IPython log file
+
+# Tue, 23 Jul 2024 13:54:23
+device_info
+#[Out]# <module 'apstools.utils.device_info' from '/opt/homebrew/Caskroom/miniforge/base/envs/test_bs_id/lib/python3.10/site-packages/apstools/utils/device_info.py'>
+# Tue, 23 Jul 2024 13:54:33
+RE(demo_sim_1d())
