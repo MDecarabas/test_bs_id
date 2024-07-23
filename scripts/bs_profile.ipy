@@ -18,6 +18,7 @@ if _ip is not None:
     _ip.register_magics(BlueskyMagics)
     _ip.run_line_magic("xmode", _xmode_level)
     _ip.run_line_magic("matplotlib", "inline")
+
     logger.info("xmode exception level: '%s'", _xmode_level)
 
 
