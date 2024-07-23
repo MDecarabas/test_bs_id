@@ -5,24 +5,11 @@ Configure for data collection using bluesky-queueserver.
 import inspect
 import os
 
-import ophyd
 import pyRestTable
 from ophyd import Device
 from ophyd import Signal
 
-# from ..callbacks import *  # noqa
-# from ..devices import *  # noqa
-# from ..initialize_bs_tools import RE
-# from ..initialize_bs_tools import cat
-# from ..initialize_bs_tools import sd
-# from ..plans import *  # noqa
 from .iconfig_loader import iconfig
-
-# guides choice of module to import cat
-# iconfig["framework"] = "queueserver"
-
-
-# RE.subscribe(cat.v1.insert)
 
 
 # update OS environment variables for APS Data Management
@@ -109,7 +96,3 @@ def print_plans():
         for k in plans:
             print(f"* {k}{inspect.signature(glo[k])}")
         print("")
-
-
-# if iconfig.get("APS_IN_BASELINE", False):
-#     sd.baseline.append(aps) # noqa #???
