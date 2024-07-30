@@ -5,8 +5,9 @@ Tools that beamline might require tied with epics
 import logging
 
 import ophyd
-from iconfig_loader import iconfig
 from ophyd import EpicsSignal
+
+from .iconfig_loader import iconfig
 
 
 def epics_scan_id_source(scan_id_epics, _md):

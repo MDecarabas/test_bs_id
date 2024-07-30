@@ -29,9 +29,6 @@ dev = [
     "isort",
 ]
 
-[project.urls]
-Homepage = ""
-Downloads = ""
 
 ######################
 # Build Info + Tools #
