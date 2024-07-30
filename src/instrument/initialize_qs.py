@@ -78,13 +78,13 @@ def print_RE_metadata():
         print(table)
 
 
-if iconfig.get("WRITE_SPEC_DATA_FILES", False):
-    if specwriter is not None: # noqa
-        RE.subscribe(specwriter.receiver) # noqa
-        logger.info(f"writing to SPEC file: {specwriter.spec_filename}") # noqa
-        logger.info("   >>>>   Using default SPEC file name   <<<<")
-        logger.info("   file will be created when bluesky ends its next scan")
-        logger.info("   to change SPEC file, use command:   newSpecFile('title')")
+# if iconfig.get("WRITE_SPEC_DATA_FILES", False):
+#     if specwriter is not None: # noqa
+#         RE.subscribe(specwriter.receiver) # noqa
+#         logger.info(f"writing to SPEC file: {specwriter.spec_filename}") # noqa
+#         logger.info("   >>>>   Using default SPEC file name   <<<<")
+#         logger.info("   file will be created when bluesky ends its next scan")
+#         logger.info("   to change SPEC file, use command:   newSpecFile('title')")
 
 
 def print_devices_and_signals():
@@ -127,5 +127,5 @@ def print_plans():
         print("")
 
 
-if iconfig.get("APS_IN_BASELINE", False):
-    sd.baseline.append(aps) # noqa #???
+# if iconfig.get("APS_IN_BASELINE", False):
+#     sd.baseline.append(aps) # noqa #???
