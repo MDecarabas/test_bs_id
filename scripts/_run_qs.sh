@@ -6,14 +6,15 @@
 # change the program defaults here
 if [ "${DATABROKER_CATALOG}" == "" ]; then
     SCRIPT_DIR=$(dirname $(readlink -f "${0}"))
-    DATABROKER_CATALOG=$(grep DATABROKER_CATALOG ${SCRIPT_DIR}/../src/instrument/configs/iconfig.yml  | awk '{print $NF}')
+    DATABROKER_CATALOG=$(grep DATABROKER_CATALOG ${SCRIPT_DIR}/../src/instrument/configs/iconfig.yml  | awk '{print $NF}') #TODO: De-hardcode
     echo "Using catalog ${DATABROKER_CATALOG}"
 fi
 
 export QS_SERVER_HOST=$(hostname)  # or host (that passes $(hostname) test below)
 export QS_UPDATE_PLANS_DEVICES=ENVIRONMENT_OPEN
-export QS_USER_GROUP_PERMISSIONS_FILE="${SCRIPT_DIR}/../src/instrument/configs/user_group_permissions.yaml"
+export QS_USER_GROUP_PERMISSIONS_FILE="${SCRIPT_DIR}/../src/instrument/configs/user_group_permissions.yaml" #TODO: De-hardcode
 export QS_USER_GROUP_PERMISSIONS_RELOAD=ON_STARTUP
+export STARTUP_DIR = "${SCRIPT_DIR}/../src/instrument/initialize_qs.py"
 
 # REDIS_ADDR is __always__ localhost.
 # Override if it is not, but you may encounter access issues.
