@@ -5,7 +5,7 @@ DATABROKER_CATALOG: &databroker_catalog eric_test
 # default RunEngine metadata
 RUNENGINE_METADATA:
   beamline_id: sim_id
-  instrument_name: Sim-ID-I 
+  instrument_name: Sim-ID-I
   proposal_id: SimDev
   databroker_catalog: *databroker_catalog
 
@@ -23,7 +23,7 @@ NEXUS_WARN_MISSING_CONTENT: false
 NEXUS_FILE_EXTENSION: hdf
 WRITE_SPEC_DATA_FILES: false
 
-# APS Data Management 
+# APS Data Management
 DM_SETUP_FILE: "/home/dm/etc/dm.setup.sh"
 
 

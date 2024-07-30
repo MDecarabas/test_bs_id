@@ -11,7 +11,6 @@ import logging
 
 # convenience imports
 import databroker
-import ophyd
 from apstools.utils import dm_setup  # noqa TODO: where will this permenantly live?
 from bluesky import SupplementalData
 from bluesky.callbacks.best_effort import BestEffortCallback

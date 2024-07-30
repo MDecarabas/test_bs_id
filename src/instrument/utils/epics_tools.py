@@ -1,6 +1,7 @@
-'''
+"""
 Tools that beamline might require tied with epics
-'''
+"""
+
 import logging
 
 import ophyd
@@ -27,11 +28,10 @@ def epics_scan_id_source(scan_id_epics, _md):
     return new_scan_id
 
 
-
 def RUN_ENGINE_SCAN_ID_PV(_pv, RE):
-    '''
+    """
     Define a PV to use for the `scan_id`.
-    '''
+    """
     logger = logging.getLogger(__name__)
     logger.info("Using EPICS PV %s for scan_id", _pv)
 
@@ -42,17 +42,17 @@ def RUN_ENGINE_SCAN_ID_PV(_pv, RE):
     scan_id_epics.wait_for_connection()
     RE.md["scan_id"] = scan_id_epics.get()
 
+
 def set_control_layer(control_layer):
-    '''
+    """
     OPHYD_CONTROL_LAYER is an application of "lessons learned."
     The next line can be used to switch from PyEpics to caproto.
     Only used in a couple rare cases where PyEpics code was failing.
     It's defined here since it was difficult to find how to do this
     in the ophyd documentation.
-    '''
+    """
     logger = logging.getLogger(__name__)
 
     ophyd.set_cl(iconfig.get("OPHYD_CONTROL_LAYER", control_layer).lower())
 
     logger.info(f"using ophyd control layer: {ophyd.cl.name}")
-
