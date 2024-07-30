@@ -47,7 +47,7 @@ def print_instrument_configuration():
         print(table)
 
 
-def print_RE_metadata():
+def print_RE_metadata(RE):
     """
     Print a table (to the console) with the current RunEngine metadata.
     """
