@@ -3,10 +3,7 @@ Configure for data collection using bluesky-queueserver.
 """
 
 import logging
-import os
-
 import ophyd
-import pyRestTable
 
 from sim_bs_instrument.callbacks import *  # noqa
 from sim_bs_instrument.devices import *  # noqa

@@ -75,4 +75,3 @@ start-re-manager \
     --existing-plans-devices "${QS_EXISTING_PLANS_DEVICES_FILE}" \
     --zmq-publish-console ON \
     --keep-re
-    # --startup-dir "${STARTUP_DIR}" \
