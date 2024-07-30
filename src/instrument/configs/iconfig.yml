@@ -1,7 +1,4 @@
-# iconfig.yml
-
 # Configuration for the Bluesky instrument package.
-# simple key:value pairs
 
 DATABROKER_CATALOG: &databroker_catalog eric_test
 
@@ -26,11 +23,14 @@ NEXUS_WARN_MISSING_CONTENT: false
 NEXUS_FILE_EXTENSION: hdf
 WRITE_SPEC_DATA_FILES: false
 
-# ----------------------------------
+# APS Data Management 
+DM_SETUP_FILE: "/home/dm/etc/dm.setup.sh"
+
 
 # Directory to "autosave" the RE.md dictionary (uses PersistentDict)
-# Uncomment and modify to change from the default.
-# RUNENGINE_MD_PATH: ~/test_metadata # TODO: fix expanduser
+RUNENGINE_MD_PATH:
+
+# ----------------------------------
 
 # override default control layer for ophyd
 # if undefined, defaults to PyEpics
@@ -41,7 +41,7 @@ WRITE_SPEC_DATA_FILES: false
 LOGGING:
   # MAX_BYTES: 1000000
   NUMBER_OF_PREVIOUS_BACKUPS: 9
-  # LOG_PATH: /tmp
+  LOG_PATH:
   # If LOG_PATH undefined, this session will log into PWD/logs/
   # where PWD is present working directory when session is started
 

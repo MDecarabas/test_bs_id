@@ -42,7 +42,7 @@ requires = ["setuptools >= 62.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-package-dir = {"aps_8id_bs_instrument" = "src/instrument"}
+package-dir = {"sim_bs_instrument" = "src/instrument"}
 
 [tool.setuptools.package-data]
 "*" = ["*.txt", "*.yml"]

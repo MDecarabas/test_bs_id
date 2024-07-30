@@ -4,13 +4,14 @@ Replacement for ipython profile
 
 import time
 
-from aps_8id_bs_instrument.utils.iconfig_loader import iconfig
-from aps_8id_bs_instrument.utils.session_logs import logger
+from sim_bs_instrument.utils.iconfig_loader import iconfig
+from sim_bs_instrument.utils.session_logs import logger
 from bluesky.magics import BlueskyMagics
 from IPython import get_ipython
 import matplotlib.pyplot as plt
 
 logger.info(__file__)
+plt.ion()
 
 _ip = get_ipython()
 if _ip is not None:
@@ -22,7 +23,7 @@ if _ip is not None:
     logger.info("xmode exception level: '%s'", _xmode_level)
 
 
-plt.ion()
+
 
 #start timer
 t0 = time.monotonic()

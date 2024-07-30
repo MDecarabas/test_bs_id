@@ -25,17 +25,16 @@ from ophyd.sim import motor as sim_motor
 logger = logging.getLogger(__name__)
 logger.info(__file__)
 
-MOTOR = sim_motor
 CENTER = 1.1 + 0.8 * random.random()
 IMAX = 95_000 + 10_000 * random.random()
 SIGMA = 0.01 + 0.1 * random.random()
 NOISE = "poisson"
 
-if MOTOR.connected:
+if sim_motor.connected:
     sim_1d = SynGauss(
         "sim_1d",
-        MOTOR,
-        MOTOR.name,
+        sim_motor,
+        sim_motor.name,
         CENTER,
         IMAX,
         sigma=SIGMA,
@@ -43,5 +42,5 @@ if MOTOR.connected:
         labels=["simulator"],
     )
 else:
-    logger.warning("motor %s not connected, cannot create sim1d Device", MOTOR.name)
+    logger.warning("motor %s not connected, cannot create sim1d Device", sim_motor.name)
     sim1d = None

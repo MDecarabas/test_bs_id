@@ -3,13 +3,33 @@ Configure for data collection using bluesky-queueserver.
 """
 
 import inspect
+import logging
 import os
 
+import ophyd
 import pyRestTable
 from ophyd import Device
 from ophyd import Signal
 
-from .iconfig_loader import iconfig
+from .callbacks import *  # noqa
+from .devices import *  # noqa
+from .initialize_bs_tools import RE
+from .initialize_bs_tools import cat
+from .initialize_bs_tools import sd
+from .plans import *  # noqa
+from .utils.iconfig_loader import iconfig
+
+# guides choice of module to import cat
+
+logger = logging.getLogger(__name__)
+
+logger.info(__file__)
+print(__file__)
+
+RE.subscribe(cat.v1.insert)
+
+ophyd.set_cl(iconfig.get("OPHYD_CONTROL_LAYER", "PyEpics").lower())
+logger.info(f"using ophyd control layer: {ophyd.cl.name}")
 
 
 # update OS environment variables for APS Data Management
@@ -47,7 +67,7 @@ def print_instrument_configuration():
         print(table)
 
 
-def print_RE_metadata(RE):
+def print_RE_metadata():
     """
     Print a table (to the console) with the current RunEngine metadata.
     """
@@ -56,6 +76,15 @@ def print_RE_metadata(RE):
         print("")
         print("RunEngine metadata:")
         print(table)
+
+
+if iconfig.get("WRITE_SPEC_DATA_FILES", False):
+    if specwriter is not None: # noqa
+        RE.subscribe(specwriter.receiver) # noqa
+        logger.info(f"writing to SPEC file: {specwriter.spec_filename}") # noqa
+        logger.info("   >>>>   Using default SPEC file name   <<<<")
+        logger.info("   file will be created when bluesky ends its next scan")
+        logger.info("   to change SPEC file, use command:   newSpecFile('title')")
 
 
 def print_devices_and_signals():
@@ -96,3 +125,7 @@ def print_plans():
         for k in plans:
             print(f"* {k}{inspect.signature(glo[k])}")
         print("")
+
+
+if iconfig.get("APS_IN_BASELINE", False):
+    sd.baseline.append(aps) # noqa #???
