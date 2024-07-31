@@ -12,7 +12,7 @@ echo "Using catalog ${DATABROKER_CATALOG}"
 export QS_SERVER_HOST=$(hostname)  # or host (that passes $(hostname) test below)
 export QS_UPDATE_PLANS_DEVICES=ENVIRONMENT_OPEN
 export QS_USER_GROUP_PERMISSIONS_FILE="${SCRIPT_DIR}/../src/instrument/configs/user_group_permissions.yaml" #TODO: De-hardcode
-export QS_EXISTING_PLANS_DEVICES_FILE="${SCRIPT_DIR}/../src/instrument/configs/existing_plans_devices.yaml" #TODO: De-hardcode
+export QS_EXISTING_PLANS_DEVICES_FILE="${SCRIPT_DIR}/../src/instrument/configs/" #TODO: De-hardcode
 export QS_USER_GROUP_PERMISSIONS_RELOAD=ON_STARTUP
 # export STARTUP_DIR="${SCRIPT_DIR}/../src/instrument/"
 export STARTUP_SCRIPT="${SCRIPT_DIR}/bs_qserver_startup.py"
@@ -57,7 +57,7 @@ fi
 # echo "CONDA=${CONDA}"
 # echo "DATABROKER_CATALOG=${DATABROKER_CATALOG}"
 # echo "QS_SERVER_HOST=${QS_SERVER_HOST}"
-# echo "QS_UPDATE_PLANS_DEVICES=${QS_UPDATE_PLANS_DEVICES}"
+# echo "QS_UPDATE_PLANS_DEVICES=${QS_EXISTING_PLANS_DEVICES_FILE}"
 # echo "QS_USER_GROUP_PERMISSIONS_FILE=${QS_USER_GROUP_PERMISSIONS_FILE}"
 # echo "QS_USER_GROUP_PERMISSIONS_RELOAD=${QS_USER_GROUP_PERMISSIONS_RELOAD}"
 # echo "REDIS_ADDR=${REDIS_ADDR}"
