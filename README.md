@@ -1,24 +1,44 @@
-# 8-ID-I XPCS Bluesky Instrument
+# SIM-ID-I XPCS Bluesky Instrument
 
 ## Installation Steps
-*aps_8id_bs_instrument* can also use *conda* for dependency management, and
-*setuptools* for installation and development.
 
 First, download the package from github:
 
 ```bash
-$ git clone https://github.com/aps-8id-dys/bluesky 8id_bluesky_instrument
-$ cd 8id_bluesky_instrument
-$ git checkout dev-er
+git clone git@github.com:MDecarabas/test_bs_id.git
+cd test_bs_id
 ```
 
 Then create the conda environment with mamba:
 
 ```bash
-$ export ENV_NAME="aps_bs_env"
-$ conda create -n $ENV_NAME -f environment.yml
-$ conda activate $ENV_NAME
-$ pip install -e ".[dev]"
+conda create -n your_env_name python=3.10
+conda activate your_env_name
+pip install -e ".[dev]"
 ```
 
-## At! This will later on be merged into main, as such the readme is still under construction
+
+## Running Bluesky Session
+### With Ipython
+
+```bash
+./bs_ipy_starter.sh
+```
+
+Then Inside the ipython shell 
+```
+RE(demo_sim_1d())
+```
+
+### With Queserver
+s
+Inside one terminal
+```bash
+./run_qs.sh
+```
+Inside another terminal
+```bash
+qserver environment open 
+qserver queue add plan '{"name": "demo_sim_1d"}'
+qserver queue start 
+```

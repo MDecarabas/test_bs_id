@@ -23,13 +23,17 @@ NEXUS_WARN_MISSING_CONTENT: false
 NEXUS_FILE_EXTENSION: hdf
 WRITE_SPEC_DATA_FILES: false
 
-# APS Data Management
-DM_SETUP_FILE: "/home/dm/etc/dm.setup.sh"
+# APS Data Management (Traditionally this is the path: "/home/dm/etc/dm.setup.sh")
+DM_SETUP_FILE:
 
 
 # Directory to "autosave" the RE.md dictionary (uses PersistentDict)
 RUNENGINE_MD_PATH:
 
+# Best Effort Callback Configurations
+BEC:
+  BASELINE: FALSE
+  PLOTS: FALSE
 # ----------------------------------
 
 # override default control layer for ophyd

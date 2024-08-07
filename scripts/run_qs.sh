@@ -15,7 +15,7 @@ export QS_USER_GROUP_PERMISSIONS_FILE="${SCRIPT_DIR}/../src/instrument/configs/u
 export QS_EXISTING_PLANS_DEVICES_FILE="${SCRIPT_DIR}/../src/instrument/configs/" #TODO: De-hardcode
 export QS_USER_GROUP_PERMISSIONS_RELOAD=ON_STARTUP
 # export STARTUP_DIR="${SCRIPT_DIR}/../src/instrument/"
-export STARTUP_SCRIPT="${SCRIPT_DIR}/bs_qserver_startup.py"
+export STARTUP_SCRIPT="${SCRIPT_DIR}/bs_qs_startup.py"
 
 # REDIS_ADDR is __always__ localhost.
 # Override if it is not, but you may encounter access issues.

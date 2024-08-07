@@ -23,8 +23,6 @@ if _ip is not None:
     logger.info("xmode exception level: '%s'", _xmode_level)
 
 
-
-
 #start timer
 t0 = time.monotonic()
 

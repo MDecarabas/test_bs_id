@@ -29,16 +29,18 @@ from .utils.run_engine import run_engine
 logger = logging.getLogger(__name__)
 logger.info(__file__)
 
-# dm_setup(iconfig["DM_SETUP_FILE"])
+if iconfig["DM_SETUP_FILE"] is not None:
+    dm_setup(iconfig["DM_SETUP_FILE"])
 
 sd = SupplementalData()  # User will interact with the sd object, configure the RE for additional things to publish
 
 bec = BestEffortCallback()  # Responsible for plots, only be instatiated once
-bec.disable_baseline()  # User config
-# bec.disable_plots()  # User config
+if iconfig["BEC"]["BASELINE"] is False:
+    bec.disable_baseline()  # User config
+if iconfig["BEC"]["PLOTS"] is False:
+    bec.disable_plots()  # User config
 
 peaks = bec.peaks  # just an alias for less typing
-
 
 # Connect with our mongodb database
 catalog_name = iconfig.get("DATABROKER_CATALOG", "training")
@@ -55,9 +57,7 @@ except KeyError:
 # Set up a RunEngine.
 RE = run_engine(cat=cat, bec=bec, preprocessors=sd, md_path=MD_PATH)
 
-
 set_control_layer("PyEpics")
-
 
 # Set default timeout for all EpicsSignal connections & communications.
 TIMEOUT = 60  # default used next...
@@ -70,10 +70,8 @@ if not EpicsSignalBase._EpicsSignalBase__any_instantiated:
         connection_timeout=iconfig.get("PV_CONNECTION_TIMEOUT", TIMEOUT),
     )
 
-
 # Create a registry of ophyd devices
 oregistry = Registry(auto_register=True)
-
 
 _pv = iconfig.get("RUN_ENGINE_SCAN_ID_PV")
 if _pv is None:
