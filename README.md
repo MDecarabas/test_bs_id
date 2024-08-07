@@ -25,7 +25,7 @@ pip install -e ".[dev]"
 ./bs_ipy_starter.sh
 ```
 
-Then Inside the ipython shell 
+Then Inside the ipython shell
 ```
 RE(demo_sim_1d())
 ```
@@ -38,7 +38,7 @@ Inside one terminal
 ```
 Inside another terminal
 ```bash
-qserver environment open 
+qserver environment open
 qserver queue add plan '{"name": "demo_sim_1d"}'
-qserver queue start 
+qserver queue start
 ```
