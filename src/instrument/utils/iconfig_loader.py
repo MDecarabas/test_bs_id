@@ -44,9 +44,6 @@ def load_config_yaml():
     target_file_path = os.path.join(two_dirs_up, target_folder, target_file)
 
     CONFIG_FILE = target_file_path
-    # CONFIG_FILE = pathlib.Path(__file__).absolute().parent.parent.parent.parent/"configs" / "iconfig.yml"
-    print("hello \n\n\n")
-    print(CONFIG_FILE)
 
     if os.path.exists(CONFIG_FILE):
         iconfig = yaml.load(open(CONFIG_FILE, "r").read(), yaml.Loader)

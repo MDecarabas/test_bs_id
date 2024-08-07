@@ -22,6 +22,7 @@ pip install -e ".[dev]"
 ### With Ipython
 
 ```bash
+cd scripts
 ./bs_ipy_starter.sh
 ```
 
@@ -34,6 +35,7 @@ RE(demo_sim_1d())
 
 Inside one terminal
 ```bash
+cd scripts
 ./run_qs.sh
 ```
 Inside another terminal
