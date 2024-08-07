@@ -31,7 +31,7 @@ RE(demo_sim_1d())
 ```
 
 ### With Queserver
-s
+
 Inside one terminal
 ```bash
 ./run_qs.sh
