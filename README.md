@@ -12,8 +12,9 @@ cd test_bs_id
 Then create the conda environment with mamba:
 
 ```bash
-conda create -n your_env_name python=3.10
-conda activate your_env_name
+export env_name='bs_test'
+conda create -n $env_name python=3.10
+conda activate $env_name
 pip install -e ".[dev]"
 ```
 
